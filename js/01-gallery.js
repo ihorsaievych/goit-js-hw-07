@@ -11,7 +11,7 @@ const refs = {
   instance: {},
 };
 
-const markup = galleryItems.reduce(
+const renderMarkup = galleryItems.reduce(
   (acc, galleryItem) =>
     acc +
     `<div class="gallery__item">
@@ -50,6 +50,6 @@ const onKeyDown = (event) => {
     window.removeEventListener("keydown", onKeyDown);
 }   
 
-refs.gallery.insertAdjacentHTML("beforeend", markup);
+refs.gallery.insertAdjacentHTML("beforeend", renderMarkup);
 
 refs.gallery.addEventListener("click", onItem);

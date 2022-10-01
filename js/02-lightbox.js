@@ -9,12 +9,12 @@ const refs = {
   };
 
   
-const markup = galleryItems.reduce((acc, galleryItem) =>
+const renderMarkup = galleryItems.reduce((acc, galleryItem) =>
     acc + `<a class="gallery__item" href="${galleryItem.original}">
           <img class="gallery__image" src="${galleryItem.preview}" alt="${galleryItem.description}" />
        </a>`, "");
        
-refs.gallery.insertAdjacentHTML("beforeend", markup);
+refs.gallery.insertAdjacentHTML("beforeend", renderMarkup);
 const lightbox = new refs.simpleLightbox(".gallery__item", {
     captionsData: "alt",
     captionDelay: 250,
